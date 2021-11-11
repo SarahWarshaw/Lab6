@@ -10,6 +10,7 @@ class led8x8():
     for n in range(6):
       self.shifter.shiftByte(led8x8.pattern[n])
       self.shifter.shiftByte(led8x8.rows[n])
+      time.delay(1)
       
       
 
