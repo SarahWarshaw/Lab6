@@ -14,7 +14,6 @@ class led8x8():
       self.shifter.shiftByte(led8x8.pattern[n])
       self.shifter.shiftByte(led8x8.rows[n])
       self.shifter.latch()
-      time.sleep(0.001)
       
       
 
