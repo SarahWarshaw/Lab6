@@ -7,5 +7,5 @@ myLED8x8 = led8x8(dataPin, latchPin, clockPin)
 
 while True:
   myLED8x8.display()
-  time.sleep(0.1)
+  time.sleep(0.0001)
 
