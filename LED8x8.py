@@ -11,6 +11,7 @@ class led8x8():
       self.shifter.shiftByte(led8x8.pattern[n])
       print(led8x8.pattern[n])
       self.shifter.shiftByte(led8x8.rows[n])
+      print(led8x8.rows[n])
       
       
 
