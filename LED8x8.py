@@ -7,11 +7,11 @@ class led8x8():
   def __init__(self,data,latch,clock):
     self.shifter = Shifter(data,latch,clock)
   def display(self):
-    for n in range(8):
-      self.shifter.shiftByte(led8x8.pattern[n])
-      print(led8x8.pattern[n])
-      self.shifter.shiftByte(led8x8.rows[n])
-      print(led8x8.rows[n])
+    #for n in range(8):
+      self.shifter.shiftByte(led8x8.pattern[0])
+      print(led8x8.pattern[0])
+      self.shifter.shiftByte(led8x8.rows[0])
+      print(led8x8.rows[0])
       
       
 
