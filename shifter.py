@@ -6,7 +6,6 @@ import time
 class Shifter():
 
   'Shift register class'
-  GPIO.cleanup()
   def __init__(self, data, latch, clock):
     self.dataPin, self.latchPin, self.clockPin = data, latch, clock
     GPIO.setmode(GPIO.BCM)
