@@ -18,7 +18,7 @@ def newPattern(myPattern):
 while True:
   myPattern = multiprocessing.Array('i',8)
   myPattern = newPattern(myPattern)
-  p = multiprocessing.Process(target = led8x8.display,args = myPattern)
+  p = multiprocessing.Process(target = led8x8.display,args = myPattern,)
   p.daemon = True
   p.start
   # pattern = [0b00111100, 0b01000010, 0b10100101, 0b10000001,0b10100101, 0b10011001, 0b01000010, 0b00111100]
