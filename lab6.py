@@ -9,7 +9,7 @@ try:
   while True:
   # pattern = [0b00111100, 0b01000010, 0b10100101, 0b10000001,0b10100101, 0b10011001, 0b01000010, 0b00111100]
     myLED8x8.display()
-    time.sleep(0.1)
+    time.sleep(0.0001)
 except Exception as e:
   print (e)
   myLED8x8.p.terminate()
