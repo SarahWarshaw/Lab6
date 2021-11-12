@@ -25,7 +25,7 @@ class led8x8():
     for n in range(8):
       pattern[n] = 0b10101010
   
-  def lightningBug(self):
+  def lightningBug(self,pattern):
     while True:
       step = random.randint(-1,1)
       direc = random.randint(0,1)
@@ -49,5 +49,5 @@ class led8x8():
 
     print(self.X,self.Y)
     for n in range(8):
-      self.pattern[n] = 0
-    self.pattern[self.Y] = 1<<(self.X-1)
+      pattern[n] = 0
+    pattern[self.Y] = 1<<(self.X-1)
