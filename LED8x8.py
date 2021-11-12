@@ -51,4 +51,4 @@ class led8x8():
       print(self.X,self.Y)
       for n in range(8):
         pattern[n] = 0
-      pattern[self.Y] = 1<<(self.X-1)
+      pattern[self.Y] = 1<<(self.X)
