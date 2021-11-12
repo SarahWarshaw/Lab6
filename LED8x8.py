@@ -13,7 +13,7 @@ class led8x8():
   mask = 0b11111111
   def __init__(self,data,latch,clock):
     self.shifter = Shifter(data,latch,clock)
-    p = multiprocessing.Process(target = self.smiley,args = (self.pattern,))
+    p = multiprocessing.Process(target = self.lightningBug,args = (self.pattern,))
     p.daemon = True
     p.start()
   def display(self):
