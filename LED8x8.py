@@ -8,6 +8,7 @@ class led8x8():
   X = 0
   Y = 0
   # pattern2 = [0b10001110,0b01101100,0b01101010,0b10001010,0b10001010,0b01101010,0b01101100,0b10001110] #DB pattern
+  PrevPattern = [0b11111110,0b11111111,0b11111111,0b11111111,0b11111111,0b11111111,0b11111111,0b11111111]
   rows = [0b00000001, 0b00000010,0b00000100, 0b00001000,0b00010000, 0b00100000,0b01000000, 0b10000000]
   mask = 0b11111111
   def __init__(self,data,latch,clock):
@@ -49,8 +50,8 @@ class led8x8():
 
       print(self.X,self.Y)
       for n in range(8):
-        pattern[n] = 0b00000000
-      pattern[self.Y] = 1<<(self.X)
+        self.prevPattern[n] = 0b00000000
+      self.prevPattern[self.Y] = 1<<(self.X)
       for n in range(8):
-        pattern[n] = (~pattern[n] & self.mask)
+        pattern[n] = (~self.prevPattern[n] & self.mask)
       time.sleep(0.1)
