@@ -27,27 +27,28 @@ class led8x8():
   
   def lightningBug(self,pattern):
     while True:
-      step = random.randint(-1,1)
-      direc = random.randint(0,1)
-      if direc == 0:
-        if (self.X + step <0 or self.X+step>7):
-          print ("Out of board")
-        else:
-          break
-      elif direc ==1:
-        if (self.Y + step <0 or self.Y+step>7):
-          print ("Out of board")
-        else:
-          break
+      while True:
+        step = random.randint(-1,1)
+        direc = random.randint(0,1)
+        if direc == 0:
+          if (self.X + step <0 or self.X+step>7):
+            print ("Out of board")
+          else:
+            break
+        elif direc ==1:
+          if (self.Y + step <0 or self.Y+step>7):
+            print ("Out of board")
+          else:
+            break
 
-    if direc == 0: # move in X
-      self.X = self.X + step
-      print(self.X)
-    elif direc ==1: #move in Y
-      self.Y = self.Y + step
-      print(self.Y) 
+      if direc == 0: # move in X
+        self.X = self.X + step
+        print(self.X)
+      elif direc ==1: #move in Y
+        self.Y = self.Y + step
+        print(self.Y) 
 
-    print(self.X,self.Y)
-    for n in range(8):
-      pattern[n] = 0
-    pattern[self.Y] = 1<<(self.X-1)
+      print(self.X,self.Y)
+      for n in range(8):
+        pattern[n] = 0
+      pattern[self.Y] = 1<<(self.X-1)
