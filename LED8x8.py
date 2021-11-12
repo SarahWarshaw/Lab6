@@ -53,5 +53,5 @@ class led8x8():
         tempPattern[n] = 0
       tempPattern[self.Y] = 1<<(self.X)
       for n in range(8):
-        pattern[n] = (~pattern[n] & self.mask)
+        pattern[n] = (~tempPattern[n] & self.mask)
       time.sleep(0.1)
