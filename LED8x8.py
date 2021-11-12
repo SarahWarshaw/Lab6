@@ -1,5 +1,6 @@
 import time
 from shifter import Shifter
+import multiprocessing
 
 class led8x8():
   # pattern2 = [0b10001110,0b01101100,0b01101010,0b10001010,0b10001010,0b01101010,0b01101100,0b10001110] #DB pattern
@@ -8,13 +9,18 @@ class led8x8():
   mask = 0b11111111
   def __init__(self,data,latch,clock):
     self.shifter = Shifter(data,latch,clock)
-  def display(self,pattern):
+    pattern = multiprocessing.Array('i',8)
+    p = multiprocessing.Process(target = self.smiley,args = (pattern,))
+    p.daemon = True
+    p.start()
+  def display(self):
     for n in range(8):
-      pattern[n] = (~pattern[n] & led8x8.mask)
-    for n in range(8):
-      self.shifter.shiftByte(pattern[n])
+      self.shifter.shiftByte(self.pattern[n])
       self.shifter.shiftByte(led8x8.rows[n])
       self.shifter.latch()
+  def smiley(self,pattern):
+    for n in range(8):
+      pattern[n] = 0b10001110 
       
       
 
