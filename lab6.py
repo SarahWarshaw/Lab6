@@ -13,7 +13,7 @@ def newPattern(myPattern):
   pattern = [0b10001110,0b01101100,0b01101010,0b10001010,0b10001010,0b01101010,0b01101100,0b10001110]
   pattern[0] = move
   for n in range(8):
-    myPattern.Array[n] = pattern[n]
+    myPattern[n] = pattern[n]
 
 while True:
   myPattern = multiprocessing.Array('i',8)
