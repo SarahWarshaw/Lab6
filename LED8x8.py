@@ -20,7 +20,7 @@ class led8x8():
       self.shifter.latch()
   def smiley(self,pattern):
     for n in range(8):
-      pattern[n] = 0b10001110 
+      pattern[n] = 0b10101010 
       
       
 
