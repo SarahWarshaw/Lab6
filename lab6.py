@@ -8,7 +8,7 @@ myLED8x8 = led8x8(dataPin, latchPin, clockPin) #Create led8x8 object
 try:
   while True:
     myLED8x8.display() #display whatever is saved in the array pattern
-    time.sleep(0.00001)
+    time.sleep(0.001)
 except Exception as e:
   print (e)
   myLED8x8.p.terminate()
