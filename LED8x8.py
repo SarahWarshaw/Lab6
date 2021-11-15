@@ -12,7 +12,7 @@ class led8x8():
   mask = 0b11111111
   def __init__(self,data,latch,clock):
     self.shifter = Shifter(data,latch,clock) #create shifter object
-    p = multiprocessing.Process(target = self.lightningBug,args = (self.pattern,)) #create process when led8x8 object is created 
+    p = multiprocessing.Process(target = self.smiley,args = (self.pattern,)) #create process when led8x8 object is created 
     p.daemon = True
     p.start() #start process
 
