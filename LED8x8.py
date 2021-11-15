@@ -42,7 +42,9 @@ class led8x8():
       if (self.Y + stepY <0 or self.Y+stepY>7):
           stepY = 0 #don't have it go out of bounds
       self.X = self.X + stepX #step in X
+      print(self.X)
       self.Y = self.Y + stepY #step in Y
+      print(self.Y)
 
       for n in range(8):
         self.prevPattern[n] = 0b00000000 #make all pattern 0
