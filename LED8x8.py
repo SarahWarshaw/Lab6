@@ -39,17 +39,14 @@ class led8x8():
       stepY = random.randint(-1,1) #how many spaces to move in Y(-1,0,1)
       if ((self.X + stepX <0) or (self.X+stepX>7)):
           stepX = 0 #don't have it go out of bounds
-          print('out')
       if ((self.Y + stepY <0) or (self.Y+stepY>7)):
           stepY = 0 #don't have it go out of bounds
-          print('out')
       self.X = self.X + stepX #step in X
-      print(self.X)
       self.Y = self.Y + stepY #step in Y
-      print(self.Y)
       for n in range(8):
         self.prevPattern[n] = 0b00000000 #make all pattern 0
       self.prevPattern[self.Y] = 1<<(self.X) #In the row selected, set the pattern to have a 1 in the selected column
       for n in range(8):
-        pattern[n] = (~self.prevPattern[n] & self.mask) #set pattern to inversion of previous pattern
+        pattern[n] = (~self.prevPattern[n] & self.mask)
+        print(pattern[n]) #set pattern to inversion of previous pattern
       time.sleep(0.1) #update pattern every 0.1 sec
