@@ -43,7 +43,7 @@ class led8x8():
           stepY = 0 #don't have it go out of bounds
       self.X = self.X + stepX #step in X
       self.Y = self.Y + stepY #step in Y
-      
+
       for n in range(8):
         self.prevPattern[n] = 0b00000000 #make all pattern 0
       self.prevPattern[self.Y] = 1<<(self.X) #In the row selected, set the pattern to have a 1 in the selected column
