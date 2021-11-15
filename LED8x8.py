@@ -37,15 +37,16 @@ class led8x8():
     while True:
       stepX = random.randint(-1,1) #how many spaces to move in X(-1,0,1)
       stepY = random.randint(-1,1) #how many spaces to move in Y(-1,0,1)
-      if (self.X + stepX <0 or self.X+stepX>7):
+      if ((self.X + stepX <0) or (self.X+stepX>7)):
           stepX = 0 #don't have it go out of bounds
-      if (self.Y + stepY <0 or self.Y+stepY>7):
+          print('out')
+      if ((self.Y + stepY <0) or (self.Y+stepY>7)):
           stepY = 0 #don't have it go out of bounds
+          print('out')
       self.X = self.X + stepX #step in X
       print(self.X)
       self.Y = self.Y + stepY #step in Y
       print(self.Y)
-
       for n in range(8):
         self.prevPattern[n] = 0b00000000 #make all pattern 0
       self.prevPattern[self.Y] = 1<<(self.X) #In the row selected, set the pattern to have a 1 in the selected column
